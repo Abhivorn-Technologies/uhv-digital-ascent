@@ -6,7 +6,7 @@ const stats = [
   { icon: Users, value: 100, suffix: "+", label: "Clients Served" },
   { icon: FolderKanban, value: 50, suffix: "+", label: "Projects Delivered" },
   { icon: ThumbsUp, value: 99, suffix: "%", label: "Client Satisfaction" },
-  { icon: Clock, value: 10, suffix: "+", label: "Years Experience" },
+  { icon: Clock, value: 3, suffix: "+", label: "Years Experience" },
 ];
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
@@ -18,7 +18,7 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
     if (!isInView) return;
     let start = 0;
     const duration = 1500;
-    const step = Math.ceil(target / (duration / 16));
+    const step = Math.max(1, Math.ceil(target / (duration / 16)));
     const timer = setInterval(() => {
       start += step;
       if (start >= target) {
@@ -75,10 +75,7 @@ const WhyChooseUs = () => {
             className="grid grid-cols-2 gap-6"
           >
             {stats.map((stat, i) => (
-              <div
-                key={i}
-                className="bg-card rounded-2xl p-6 card-shadow text-center"
-              >
+              <div key={i} className="bg-card rounded-2xl p-6 card-shadow text-center">
                 <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mx-auto mb-3">
                   <stat.icon size={22} className="text-primary-foreground" />
                 </div>
