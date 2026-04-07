@@ -8,10 +8,12 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PageLoader from "@/components/PageLoader";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageLoader />
       <Navbar />
       <HeroSection />
       <AboutSection />

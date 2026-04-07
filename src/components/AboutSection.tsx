@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle, Award, Headphones } from "lucide-react";
 import teamWorking from "@/assets/team-working.jpg";
@@ -19,34 +18,24 @@ const AboutSection = () => {
     <section id="about" className="py-20 lg:py-28" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Images */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <img
-              src={teamWorking}
-              alt="Team collaboration"
-              className="rounded-2xl shadow-lg w-full max-w-sm"
-            />
-            <img
-              src={officeMeeting}
-              alt="Office meeting"
-              className="rounded-2xl shadow-xl absolute top-1/3 left-1/3 w-64 md:w-72 border-4 border-background hidden md:block"
-            />
+            <img src={teamWorking} alt="Team collaboration" loading="lazy" className="rounded-2xl shadow-lg w-full max-w-sm" />
+            <img src={officeMeeting} alt="Office meeting" loading="lazy" className="rounded-2xl shadow-xl absolute top-1/3 left-1/3 w-64 md:w-72 border-4 border-background hidden md:block" />
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
               className="absolute bottom-4 right-0 md:right-10 gradient-bg text-primary-foreground rounded-2xl px-6 py-4 shadow-xl"
             >
-              <p className="font-heading font-bold text-2xl">10+</p>
+              <p className="font-heading font-bold text-2xl">3+</p>
               <p className="text-sm opacity-90">Years of Experience</p>
             </motion.div>
           </motion.div>
 
-          {/* Right - Content */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -60,7 +49,6 @@ const AboutSection = () => {
             <p className="text-muted-foreground leading-relaxed mb-8">
               At UHV Software Solutions, we combine deep technical expertise with strategic thinking to deliver solutions that transform businesses. Our team of skilled professionals is committed to excellence and innovation.
             </p>
-
             <div className="space-y-5">
               {features.map((f, i) => (
                 <div key={i} className="flex items-start gap-4">

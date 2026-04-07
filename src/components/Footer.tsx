@@ -1,13 +1,39 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/uhv-logo.jpeg";
+
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Contact", to: "/contact" },
+  { label: "Blog", to: "/blog" },
+];
+
+const serviceLinks = [
+  "IT Consulting",
+  "Cloud Computing",
+  "Cyber Security",
+  "Web Development",
+  "AI & Automation",
+  "Data Analytics",
+];
+
+const otherLinks = [
+  { label: "Why Choose Us", to: "/#why-us" },
+  { label: "Our Process", to: "/#process" },
+  { label: "Testimonials", to: "/#testimonials" },
+  { label: "Case Studies", to: "/blog" },
+];
 
 const Footer = () => {
   return (
     <footer className="bg-foreground text-background/80 pt-16 pb-8">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* About */}
-          <div>
+          <div className="lg:col-span-1">
             <img src={logo} alt="UHV Software Solutions" className="h-10 mb-4 brightness-0 invert" />
             <p className="text-sm leading-relaxed opacity-70">
               Delivering innovative technology solutions that drive growth and digital transformation for businesses worldwide.
@@ -18,11 +44,11 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-background mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              {["Home", "About", "Services", "Process", "Testimonials"].map((l) => (
-                <li key={l}>
-                  <a href={`#${l.toLowerCase()}`} className="opacity-70 hover:opacity-100 transition-opacity">
-                    {l}
-                  </a>
+              {quickLinks.map((l) => (
+                <li key={l.label}>
+                  <Link to={l.to} className="opacity-70 hover:opacity-100 transition-opacity">
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -32,8 +58,26 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-background mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              {["IT Consulting", "Cloud Computing", "Cyber Security", "Web Development", "AI & Automation"].map((s) => (
-                <li key={s} className="opacity-70">{s}</li>
+              {serviceLinks.map((s) => (
+                <li key={s}>
+                  <Link to="/services" className="opacity-70 hover:opacity-100 transition-opacity">
+                    {s}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* More */}
+          <div>
+            <h4 className="font-heading font-semibold text-background mb-4">Explore</h4>
+            <ul className="space-y-2 text-sm">
+              {otherLinks.map((l) => (
+                <li key={l.label}>
+                  <Link to={l.to} className="opacity-70 hover:opacity-100 transition-opacity">
+                    {l.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
