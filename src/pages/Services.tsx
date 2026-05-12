@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import ServicesSection from "@/components/ServicesSection";
 import ProcessSection from "@/components/ProcessSection";
 import CTASection from "@/components/CTASection";
@@ -20,7 +19,8 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="font-heading text-4xl md:text-5xl font-bold mb-4"
           >
@@ -28,7 +28,8 @@ const ServicesPage = () => {
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg opacity-90 max-w-2xl mx-auto"
           >
@@ -41,7 +42,6 @@ const ServicesPage = () => {
       <ProcessSection />
       <CTASection />
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 };

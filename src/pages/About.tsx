@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import AboutSection from "@/components/AboutSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -65,7 +64,7 @@ const AboutPage = () => {
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-card rounded-2xl p-7 card-shadow"
               >
@@ -83,7 +82,6 @@ const AboutPage = () => {
       <WhyChooseUs />
       <TestimonialsSection />
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 };

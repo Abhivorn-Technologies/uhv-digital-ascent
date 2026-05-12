@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, User } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const posts = [
   {
@@ -70,7 +69,8 @@ const BlogPage = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="font-heading text-4xl md:text-5xl font-bold mb-4"
           >
@@ -78,7 +78,8 @@ const BlogPage = () => {
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg opacity-90 max-w-2xl mx-auto"
           >
@@ -95,7 +96,7 @@ const BlogPage = () => {
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-card rounded-2xl overflow-hidden card-shadow group"
               >
@@ -124,7 +125,6 @@ const BlogPage = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 };

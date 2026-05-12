@@ -1,27 +1,26 @@
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Monitor, Cloud, Shield, Globe, Bot, BarChart3 } from "lucide-react";
+import { Monitor, Cloud, Shield, Globe, Bot, BarChart3, Users, GraduationCap, Laptop } from "lucide-react";
 
 const services = [
+  { icon: Globe, title: "Web & App Development", desc: "Custom web and mobile applications built with cutting-edge technologies, including installation and maintenance." },
+  { icon: Laptop, title: "Software Solutions", desc: "End-to-end software development and maintenance services tailored to your specific business requirements." },
   { icon: Monitor, title: "IT Consulting", desc: "Strategic technology consulting to align IT with your business goals and drive digital transformation." },
+  { icon: Users, title: "IT Recruitment & Staffing", desc: "Domestic and US IT recruiting, technical support, and resource outsourcing to scale your team." },
+  { icon: GraduationCap, title: "Training Programs", desc: "Specialized training programs designed to support skill development and digital transformation." },
   { icon: Cloud, title: "Cloud Computing", desc: "Scalable cloud solutions for migration, management, and optimization across major platforms." },
-  { icon: Shield, title: "Cyber Security", desc: "Comprehensive security services to protect your data, infrastructure, and digital assets." },
-  { icon: Globe, title: "Web & App Development", desc: "Custom web and mobile applications built with cutting-edge technologies for optimal performance." },
   { icon: Bot, title: "AI & Automation", desc: "Intelligent automation solutions powered by AI and machine learning to streamline operations." },
-  { icon: BarChart3, title: "Data Analytics", desc: "Transform raw data into actionable insights with our advanced analytics and visualization services." },
+  { icon: Shield, title: "Cyber Security", desc: "Comprehensive security services to protect your data, infrastructure, and digital assets." },
+  { icon: BarChart3, title: "Custom Technology Solutions", desc: "Bespoke technology solutions designed to support business growth across various industries." },
 ];
 
 const ServicesSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="services" className="py-20 lg:py-28 bg-secondary/50" ref={ref}>
+    <section id="services" className="py-20 lg:py-28 bg-secondary/50">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
@@ -39,7 +38,8 @@ const ServicesSection = () => {
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="gradient-border card-shadow bg-card rounded-2xl p-7 group cursor-pointer"
             >

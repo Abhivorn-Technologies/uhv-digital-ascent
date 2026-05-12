@@ -39,16 +39,14 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 };
 
 const WhyChooseUs = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="why-us" className="py-20 lg:py-28 bg-secondary/50" ref={ref}>
+    <section id="why-us" className="py-20 lg:py-28 bg-secondary/50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">Why Choose Us</span>
@@ -70,7 +68,8 @@ const WhyChooseUs = () => {
 
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="grid grid-cols-2 gap-6"
           >

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroProfessional from "@/assets/hero-professional.jpg";
 
@@ -36,12 +36,6 @@ const HeroSection = () => {
                 className="gradient-bg text-primary-foreground px-8 py-3.5 rounded-lg font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity shadow-lg"
               >
                 Start Now <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/contact"
-                className="border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold flex items-center gap-2 hover:bg-primary/5 transition-colors"
-              >
-                <Phone size={18} /> Contact Us
               </Link>
             </div>
           </motion.div>
