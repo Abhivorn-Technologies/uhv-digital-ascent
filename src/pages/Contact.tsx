@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const ContactPage = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -26,7 +25,8 @@ const ContactPage = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="font-heading text-4xl md:text-5xl font-bold mb-4"
           >
@@ -34,7 +34,8 @@ const ContactPage = () => {
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg opacity-90 max-w-2xl mx-auto"
           >
@@ -49,9 +50,9 @@ const ContactPage = () => {
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
             >
               <h2 className="font-heading text-3xl font-bold mb-6">
                 Let's Build Something <span className="gradient-text">Great Together</span>
@@ -67,7 +68,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium text-foreground">info@uhvsoftware.com</p>
+                    <p className="font-medium text-foreground">Info@uhvsoftwaresolutions.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -85,7 +86,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Address</p>
-                    <p className="font-medium text-foreground">India</p>
+                    <p className="font-medium text-foreground">H.NO:21-5-54/73, CHINTAKUNTA,<br />Karimnagar, Telangana - 505001</p>
                   </div>
                 </div>
               </div>
@@ -94,9 +95,9 @@ const ContactPage = () => {
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             >
               <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 card-shadow space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
@@ -158,7 +159,6 @@ const ContactPage = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 };

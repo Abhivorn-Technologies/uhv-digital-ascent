@@ -1,5 +1,4 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { Search, PenTool, Code, TestTube, Rocket } from "lucide-react";
 
 const steps = [
@@ -11,15 +10,13 @@ const steps = [
 ];
 
 const ProcessSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="process" className="py-20 lg:py-28" ref={ref}>
+    <section id="process" className="py-20 lg:py-28">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
@@ -36,7 +33,8 @@ const ProcessSection = () => {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="flex flex-col items-center text-center relative"
               >

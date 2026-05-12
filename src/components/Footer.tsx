@@ -34,7 +34,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* About */}
           <div className="lg:col-span-1">
-            <img src={logo} alt="UHV Software Solutions" className="h-10 mb-4 brightness-0 invert" />
+            <Link to="/" onClick={() => window.scrollTo(0, 0)} className="inline-block mb-4">
+              <img 
+                src={logo} 
+                alt="UHV Software Solutions" 
+                className="h-10 brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300 cursor-pointer" 
+              />
+            </Link>
             <p className="text-sm leading-relaxed opacity-70">
               Delivering innovative technology solutions that drive growth and digital transformation for businesses worldwide.
             </p>
@@ -46,7 +52,11 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               {quickLinks.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} className="opacity-70 hover:opacity-100 transition-opacity">
+                  <Link 
+                    to={l.to} 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="opacity-70 hover:opacity-100 transition-opacity"
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -60,7 +70,11 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               {serviceLinks.map((s) => (
                 <li key={s}>
-                  <Link to="/services" className="opacity-70 hover:opacity-100 transition-opacity">
+                  <Link 
+                    to="/services" 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="opacity-70 hover:opacity-100 transition-opacity"
+                  >
                     {s}
                   </Link>
                 </li>
@@ -74,7 +88,11 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               {otherLinks.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} className="opacity-70 hover:opacity-100 transition-opacity">
+                  <Link 
+                    to={l.to} 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="opacity-70 hover:opacity-100 transition-opacity"
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -87,20 +105,27 @@ const Footer = () => {
             <h4 className="font-heading font-semibold text-background mb-4">Contact</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 opacity-70">
-                <Mail size={14} /> info@uhvsoftware.com
+                <Mail size={14} /> Info@uhvsoftwaresolutions.com
               </li>
               <li className="flex items-center gap-2 opacity-70">
                 <Phone size={14} /> +91 123 456 7890
               </li>
               <li className="flex items-start gap-2 opacity-70">
-                <MapPin size={14} className="mt-0.5" /> India
+                <MapPin size={14} className="mt-0.5" /> 
+                <span>H.NO:21-5-54/73, CHINTAKUNTA,<br />Karimnagar, Telangana - 505001</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-background/10 pt-6 text-center text-sm opacity-50">
-          © {new Date().getFullYear()} UHV Software Solutions Pvt Ltd. All rights reserved.
+          <p>
+            © {new Date().getFullYear()} UHV Software Solutions Pvt Ltd. All rights reserved. | Developed by <a href="https://www.abhivorn.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Abhivorn Technologies Pvt.ltd</a>
+          </p>
+          {/* <div className="flex gap-6">
+            <Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Terms & Conditions</Link>
+          </div> */}
         </div>
       </div>
     </footer>

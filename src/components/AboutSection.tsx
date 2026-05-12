@@ -1,5 +1,4 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { CheckCircle, Award, Headphones } from "lucide-react";
 import teamWorking from "@/assets/team-working.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
@@ -11,16 +10,14 @@ const features = [
 ];
 
 const AboutSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="about" className="py-20 lg:py-28" ref={ref}>
+    <section id="about" className="py-20 lg:py-28">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="relative"
           >
@@ -38,7 +35,8 @@ const AboutSection = () => {
 
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">About Us</span>
@@ -46,8 +44,11 @@ const AboutSection = () => {
               We Help Businesses Scale with{" "}
               <span className="gradient-text">Technology</span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              At UHV Software Solutions, we combine deep technical expertise with strategic thinking to deliver solutions that transform businesses. Our team of skilled professionals is committed to excellence and innovation.
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              UHV Software Solutions provides comprehensive IT and software solutions, including software development, web development, mobile app development, installation, and maintenance services.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              We also offer specialized IT recruitment and staffing services, covering domestic and US IT recruiting, technical support, and resource outsourcing. Furthermore, we conduct training programs and provide customized technology solutions designed to support business growth and digital transformation across various industries.
             </p>
             <div className="space-y-5">
               {features.map((f, i) => (

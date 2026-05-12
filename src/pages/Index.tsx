@@ -7,7 +7,6 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageLoader from "@/components/PageLoader";
 
 const Index = () => {
@@ -23,7 +22,6 @@ const Index = () => {
       <TestimonialsSection />
       <CTASection />
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 };
