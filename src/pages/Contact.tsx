@@ -71,15 +71,7 @@ const ContactPage = () => {
                     <p className="font-medium text-foreground">Info@uhvsoftwaresolutions.com</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone size={20} className="text-primary-foreground" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="font-medium text-foreground">+91 123 456 7890</p>
-                  </div>
-                </div>
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center flex-shrink-0">
                     <MapPin size={20} className="text-primary-foreground" />

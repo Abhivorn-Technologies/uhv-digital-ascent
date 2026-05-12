@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import logo from "@/assets/uhv-logo.jpeg";
 
 const quickLinks = [
@@ -107,9 +107,7 @@ const Footer = () => {
               <li className="flex items-center gap-2 opacity-70">
                 <Mail size={14} /> Info@uhvsoftwaresolutions.com
               </li>
-              <li className="flex items-center gap-2 opacity-70">
-                <Phone size={14} /> +91 123 456 7890
-              </li>
+
               <li className="flex items-start gap-2 opacity-70">
                 <MapPin size={14} className="mt-0.5" /> 
                 <span>H.NO:21-5-54/73, CHINTAKUNTA,<br />Karimnagar, Telangana - 505001</span>

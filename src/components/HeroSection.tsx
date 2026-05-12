@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroProfessional from "@/assets/hero-professional.jpg";
+import softwareSolutions from "@/assets/software-solutions.png";
 
 const HeroSection = () => {
   return (
@@ -49,8 +49,8 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 gradient-bg rounded-3xl rotate-3 opacity-20 blur-xl" />
               <img
-                src={heroProfessional}
-                alt="IT Professional"
+                src={softwareSolutions}
+                alt="Software Solutions"
                 className="relative rounded-3xl shadow-2xl w-full max-w-md lg:max-w-lg object-cover"
               />
               <motion.div
